@@ -14,16 +14,22 @@ const Display = (prop) => {
 }
 
 const Statistics = ({statistics}) => {
-  return(<div>
-    <h1>statistics</h1>
-    <p>{"good "+statistics.good}</p>
-    <p>{"neutral "+statistics.neutral}</p>
-    <p>{"bad "+statistics.bad}</p>
-    <p>{"all "+statistics.all}</p>
-    <p>{"average "+statistics.average}</p>
-    <p>{"positive "+statistics.positive}</p>
-  </div>
+  if (statistics.all > 0) {
+    return(<div>
+      <h1>statistics</h1>
+      <p>{"good "+statistics.good}</p>
+      <p>{"neutral "+statistics.neutral}</p>
+      <p>{"bad "+statistics.bad}</p>
+      <p>{"all "+statistics.all}</p>
+      <p>{"average "+statistics.average}</p>
+      <p>{"positive "+statistics.positive}</p>
+    </div>
+    )
+  }
+  return(
+    <p>No feedback given</p>
   )
+  
 }
 
 const App = () => {
