@@ -13,6 +13,19 @@ const Display = (prop) => {
   )
 }
 
+const Statistics = ({statistics}) => {
+  return(<div>
+    <h1>statistics</h1>
+    <p>{"good "+statistics.good}</p>
+    <p>{"neutral "+statistics.neutral}</p>
+    <p>{"bad "+statistics.bad}</p>
+    <p>{"all "+statistics.all}</p>
+    <p>{"average "+statistics.average}</p>
+    <p>{"positive "+statistics.positive}</p>
+  </div>
+  )
+}
+
 const App = () => {
   // save clicks of each button to its own state
   const [statistics, setStatistics] = useState({
@@ -68,13 +81,7 @@ const App = () => {
       <Button click={addToNeutral} name="neutral"/>
       <Button click={addToBad} name="bad"/>
       
-      <h1>statistics</h1>
-      <Display name={"good "+statistics.good}/>
-      <Display name={"neutral "+statistics.neutral}/>
-      <Display name={"bad "+statistics.bad}/>
-      <Display name={"all "+statistics.all}/>
-      <Display name={"average "+statistics.average}/>
-      <Display name={"positive "+statistics.positive}/>
+      <Statistics statistics={statistics}/>
     </div>
   )
 }
