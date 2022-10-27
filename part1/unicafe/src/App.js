@@ -13,17 +13,32 @@ const Display = (prop) => {
   )
 }
 
+const StatisticLine = (prop) => {
+  return(
+    <tr>
+      <td>{prop.name}</td>
+      <td>{prop.value}</td>
+    </tr>
+    
+  )
+}
+
 const Statistics = ({statistics}) => {
   if (statistics.all > 0) {
-    return(<div>
+    return(
+      <>
       <h1>statistics</h1>
-      <p>{"good "+statistics.good}</p>
-      <p>{"neutral "+statistics.neutral}</p>
-      <p>{"bad "+statistics.bad}</p>
-      <p>{"all "+statistics.all}</p>
-      <p>{"average "+statistics.average}</p>
-      <p>{"positive "+statistics.positive}</p>
-    </div>
+      <table>
+        <tbody>
+          <StatisticLine name="good" value={statistics.good}/>
+          <StatisticLine name="neutral" value={statistics.neutral}/>
+          <StatisticLine name="bad" value={statistics.bad}/>
+          <StatisticLine name="all" value={statistics.all}/>
+          <StatisticLine name="average" value={statistics.average.toFixed(2)}/>
+          <StatisticLine name="positive" value={statistics.positive.toFixed(2)+" %"}/>
+        </tbody>
+      </table>
+      </>
     )
   }
   return(
