@@ -34,7 +34,6 @@ const App = () => {
       ...selected,
       index: randIndex
     })
-    console.log(randIndex)
   }
 
   const vote = () => {
@@ -57,8 +56,6 @@ const App = () => {
       maxVoteIndex: newMaxVoteIndex
     })
   }
-
-  console.log(selected.votes)
 
   return (
     <div>
